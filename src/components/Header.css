@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto:wght@100&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+}
+
+header {
+    background-image: url("F:\documents\web-dev\todo-app\src\images\bg-desktop-dark.jpg");
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 5%;
+    color: White;
+    letter-spacing: 1rem;
+}
