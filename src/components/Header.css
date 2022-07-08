@@ -9,14 +9,33 @@
 
 header {
     background-image: url("F:\documents\web-dev\todo-app\src\images\bg-desktop-dark.jpg");
-    height: 40%;
+    background-size: cover;
+    height: 30%;
     width: 100%;
     position: absolute;
-    background-size: cover;
 }
 
 h1 {
-    margin-top: 5%;
     color: White;
     letter-spacing: 1rem;
+    text-align: center;
+    padding: 5rem;
+}
+
+.search-bar {
+    text-align: center;
+    padding-top: 5rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    position: relative;
+    line-height: 40px;
+    width: 545px;
+    border-radius: 0.3rem;
+    padding-left: 10px;
+    padding-top: 5px;
+    background-color: #1E1F30;
+    border: 2px solid rgb(75, 75, 75);
+    
 }
