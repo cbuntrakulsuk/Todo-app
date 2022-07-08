@@ -1,4 +1,13 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto:wght@100&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans';
+}
+
+.app {
   text-align: center;
 }
 
@@ -13,6 +22,68 @@
   margin-top: 0px;
   width: 545px;
   color: rgb(151, 149, 149);
-  border: 1px solid rgb(75, 75, 75);
-  border-bottom: 0.5 px;
+  border-bottom: 1px solid rgb(70, 69, 69);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.note:first-of-type {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.note:last-of-type {
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  border-bottom: transparent;
+}
+
+header {
+    background-image: url("F:\documents\web-dev\todo-app\src\images\bg-desktop-dark.jpg");
+    background-size: cover;
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    padding: 2rem;
+}
+
+.title-bar {
+  display: flex;
+  width: 530px;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+.brand {
+  width: 50%;
+}
+
+.icon {
+  width: 50%;
+  color: white;
+  text-align: right;
+}
+
+h1 {
+    color: White;
+    letter-spacing: 1rem;
+    text-align: left;
+}
+
+.search-bar {
+    text-align: center;
+    padding-top: 10rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    position: relative;
+    line-height: 40px;
+    width: 545px;
+    border-radius: 0.3rem;
+    padding-left: 10px;
+    padding-top: 5px;
+    background-color: #1E1F30;
+    /* border: 2px solid rgb(75, 75, 75); */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: transparent;
 }
