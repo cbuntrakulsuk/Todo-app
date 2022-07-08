@@ -1,8 +1,9 @@
 
-function Note () {
+function Note (props) {
     return (
         <div className="note">
-            <p>This is a test note.</p>
+            {console.log(props.content)}
+            <p>{props.content}</p>
         </div>
     );
 } 

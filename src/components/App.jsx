@@ -2,21 +2,32 @@ import './App.css';
 import Header from "./Header";
 import Note from "./Note";
 import Search from "./Search";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Search />
-      <div className="note-area">
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-        <Note />
-      </div>
 
+  const [noteArray, setNoteArray] = useState([]);
+
+  function pushtoArray(note) {
+    setNoteArray((prevNote)=>{
+      return (
+        [
+          ...prevNote,
+          note
+        ]
+      )
+    })
+  }
+
+  return (
+    <div className="app">
+      <Header />
+      <Search pushNote={pushtoArray}/>
+      {noteArray.map((item)=> {
+        return(
+          <Note content={item} />
+        )
+      })}
     </div>
   );
 }

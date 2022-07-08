@@ -26,11 +26,6 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.note:first-of-type {
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-}
-
 .note:last-of-type {
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
@@ -75,15 +70,43 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.search-field {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.ser {
+  width: 445px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.search-btn {
+  width: 100px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  border: transparent;
+  background-color: #9f1a46;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #f1f3dd;
+}
+
 input {
     position: relative;
     line-height: 40px;
     width: 545px;
     border-radius: 0.3rem;
-    padding-left: 10px;
-    padding-top: 5px;
+    padding-left: 20px;
     background-color: #1E1F30;
-    /* border: 2px solid rgb(75, 75, 75); */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: transparent;
+    color: #f1f3dd;
+}
+
+input:focus {
+  outline: none;
+  color: white;
 }
