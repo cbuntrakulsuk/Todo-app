@@ -33,12 +33,12 @@
 }
 
 header {
-    background-image: url("../images/bg-desktop-dark.jpg");
-    background-size: cover;
-    height: 30%;
-    width: 100%;
-    position: absolute;
-    padding: 2rem;
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-size: cover;
+  height: 30%;
+  width: 100%;
+  position: absolute;
+  padding: 2rem;
 }
 
 .title-bar {
@@ -59,15 +59,15 @@ header {
 }
 
 h1 {
-    color: White;
-    letter-spacing: 1rem;
-    text-align: left;
+  color: White;
+  letter-spacing: 1rem;
+  text-align: left;
 }
 
 .search-bar {
-    text-align: center;
-    padding-top: 10rem;
-    margin-bottom: 1rem;
+  text-align: center;
+  padding-top: 10rem;
+  margin-bottom: 1rem;
 }
 
 .search-field {
@@ -95,15 +95,15 @@ h1 {
 }
 
 input {
-    position: relative;
-    line-height: 40px;
-    width: 545px;
-    border-radius: 0.3rem;
-    padding-left: 20px;
-    background-color: #1E1F30;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border: transparent;
-    color: #f1f3dd;
+  position: relative;
+  line-height: 40px;
+  width: 545px;
+  border-radius: 0.3rem;
+  padding-left: 20px;
+  background-color: #1E1F30;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: transparent;
+  color: #f1f3dd;
 }
 
 input:focus {
