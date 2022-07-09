@@ -33,7 +33,7 @@
 }
 
 header {
-    background-image: url("F:\documents\web-dev\todo-app\src\images\bg-desktop-dark.jpg");
+    background-image: url("../images/bg-desktop-dark.jpg");
     background-size: cover;
     height: 30%;
     width: 100%;
