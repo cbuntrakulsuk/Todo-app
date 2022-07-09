@@ -1,8 +1,10 @@
 import './App.css';
+import {useState} from "react";
 import Header from "./Header";
 import Note from "./Note";
 import Search from "./Search";
-import {useState} from "react";
+import Filter from "./Filter";
+
 
 function App() {
 
@@ -28,6 +30,7 @@ function App() {
           <Note content={item} />
         )
       })}
+      <Filter />
     </div>
   );
 }

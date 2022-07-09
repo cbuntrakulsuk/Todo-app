@@ -11,6 +11,7 @@ function Search(props) {
 
     function handleClick(event) {
         props.pushNote(inputText);
+        setInputText("");
         event.preventDefault();
     }
 

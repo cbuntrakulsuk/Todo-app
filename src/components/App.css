@@ -26,7 +26,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.note:last-of-type {
+.filter-bar {
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
   border-bottom: transparent;
@@ -109,4 +109,48 @@ input {
 input:focus {
   outline: none;
   color: white;
+}
+
+.filter-bar {
+  display: flex;
+  position: relative;
+  background-color: #25273C;
+  text-align: left;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 545px;
+  color: rgb(151, 149, 149);
+  border-bottom: 1px solid rgb(70, 69, 69);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-bar > div {
+  width: 70px;
+  font-size: 13px;
+}
+
+.filter-bar > div:first-of-type {
+  width: 150px;
+  text-align: center;
+}
+
+.filter-bar > div:last-of-type {
+  width: 200px;
+  text-align: center;
+}
+
+.center-items {
+  justify-content: center;
+  text-align: center;
+  width: 40px;
+  cursor: pointer;
+}
+
+.center-items:hover {
+  color: #9f1a46;
 }
