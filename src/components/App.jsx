@@ -21,16 +21,20 @@ function App() {
     })
   }
 
+  function clearCompleted() {
+    setNoteArray([]);
+  }
+
   return (
     <div className="app">
       <Header />
       <Search pushNote={pushtoArray}/>
-      {noteArray.map((item)=> {
+      {noteArray.map((item, index)=> {
         return(
-          <Note content={item} />
+          <Note content={item} key={index}/>
         )
       })}
-      <Filter />
+      <Filter clearList={clearCompleted} />
     </div>
   );
 }
