@@ -21,6 +21,12 @@ function App() {
     })
   }
 
+  function updateNote(value, id) {
+    const updatedNote = [...noteArray];
+    updatedNote[id].isComplete = value;
+    setNoteArray(updatedNote);
+  }
+
   function clearCompleted() {
     setNoteArray([]);
   }
@@ -31,7 +37,12 @@ function App() {
       <Search pushNote={pushtoArray}/>
       {noteArray.map((item, index)=> {
         return(
-          <Note content={item} key={index}/>
+          <Note 
+            content={item.content} 
+            id = { index }
+            key={index}
+            update = { updateNote }
+            />
         )
       })}
       <Filter clearList={clearCompleted} />

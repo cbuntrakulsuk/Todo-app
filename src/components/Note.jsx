@@ -10,11 +10,15 @@ function Note (props) {
     }
 
     function handleClick () {
-        setisCompleted(true);
+        setisCompleted(current => !current);
+        props.update(isCompleted, props.id);
     }
 
     return (
-        <div style={isCompleted ? {...strikeThough} : null} onClick={handleClick} className="note" >
+        <div 
+            style={isCompleted ? {...strikeThough} : null} 
+            onClick={handleClick} 
+            className="note" >
             {props.content}
         </div>
     );
