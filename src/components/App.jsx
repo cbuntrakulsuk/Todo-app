@@ -31,6 +31,13 @@ function App() {
     setNoteArray([]);
   }
 
+  function filterList(name) {
+    let result = noteArray.filter(item => item.isComplete === false);
+    setNoteArray(result);
+    console.log(noteArray);
+ 
+  }
+
   return (
     <div className="app">
       <Header />
@@ -38,14 +45,17 @@ function App() {
       {noteArray.map((item, index)=> {
         return(
           <Note 
-            content={item.content} 
+            content = { item.content } 
             id = { index }
-            key={index}
+            key = { index }
             update = { updateNote }
+            bool = { item.isComplete }
             />
         )
       })}
-      <Filter clearList={clearCompleted} />
+      <Filter 
+        filter = { filterList }
+        clearList={clearCompleted} />
     </div>
   );
 }

@@ -11,7 +11,7 @@ function Search(props) {
         const {value, name} = event.target;
         setInputText({
             [name]: value,
-            isComplete: false
+            isComplete: true
         });
     }
 

@@ -127,30 +127,19 @@ input:focus {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
   align-items: center;
-}
-
-.filter-bar > div {
-  width: 70px;
+  gap: 2rem;
   font-size: 13px;
 }
 
-.filter-bar > div:first-of-type {
-  width: 150px;
-  text-align: center;
-}
-
-.filter-bar > div:last-of-type {
-  width: 200px;
-  text-align: center;
-}
-
-.center-items {
+.filter-btn {
   justify-content: center;
   text-align: center;
-  width: 40px;
   cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  color: rgb(151, 149, 149);
 }
 
-.center-items:hover {
+.filter-btn:hover {
   color: #9f1a46;
 }
