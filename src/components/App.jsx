@@ -15,7 +15,14 @@ function App() {
   }
   function updateNote(id) {
     const newArr = noteArray.map((item, index) => {
-      return index === id ? { ...item, isComplete: true } : item;
+      //return index === id ? { ...item, isComplete: true } : item;
+      if (index === id && item.isComplete === false) {
+        return { ...item, isComplete: true };
+      } else if (index === id && item.isComplete === true) {
+        return { ...item, isComplete: false };
+      } else {
+        return item;
+      }
     });
     setNoteArray(newArr);
   }
