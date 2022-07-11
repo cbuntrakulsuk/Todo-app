@@ -1,27 +1,28 @@
-import {useState} from 'react';
+import { useState } from "react";
 
-function Note (props) {
+function Note(props) {
+  const [isCompleted, setisCompleted] = useState(false);
 
-    const [isCompleted, setisCompleted] = useState(false);
+  const strikeThough = {
+    textDecoration: "line-through",
+    textDecorationColor: "#9f1a46",
+  };
 
-    const strikeThough = {
-        textDecoration: 'line-through',
-        textDecorationColor: '#9f1a46'
-    }
+  function handleClick() {
+    setisCompleted((current) => !current);
+    console.log(isCompleted);
+    props.update(isCompleted, props.id);
+  }
 
-    function handleClick () {
-        setisCompleted(current => !current);
-        props.update(isCompleted, props.id);
-    }
-
-    return (
-        <div 
-            style={isCompleted ? {...strikeThough} : null} 
-            onClick={handleClick} 
-            className="note" >
-            {props.content}
-        </div>
-    );
-} 
+  return (
+    <div
+      style={props.bool ? { ...strikeThough } : null}
+      onClick={handleClick}
+      className="note"
+    >
+      {props.content}
+    </div>
+  );
+}
 
 export default Note;
