@@ -13,11 +13,11 @@ function App() {
       return [...prevNote, note];
     });
   }
-
-  function updateNote(value, id) {
-    const updatedNote = [...noteArray];
-    updatedNote[id].isComplete = value;
-    setNoteArray(updatedNote);
+  function updateNote(id) {
+    const newArr = noteArray.map((item, index) => {
+      return index === id ? { ...item, isComplete: true } : item;
+    });
+    setNoteArray(newArr);
   }
 
   function clearCompleted() {
@@ -51,3 +51,8 @@ function App() {
 }
 
 export default App;
+
+// new idea
+// call updateNote onclick from note.jsx X
+// update the bool value to true in app.jsx by passing the name? to identify the object and copy over previous note with only the updated bool.
+// render the strike thru in app.jsx based on boolean val
