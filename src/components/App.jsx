@@ -13,6 +13,10 @@ function App() {
     setNoteArray((prevNote) => {
       return [...prevNote, note];
     });
+
+    setCopyArr((prevNote) => {
+      return [...prevNote, note];
+    });
   }
 
   function updateNote(id) {
@@ -26,7 +30,7 @@ function App() {
       }
     });
     setNoteArray(newArr);
-    setCopyArr(newArr); //makes a copy of the array
+    setCopyArr(newArr); //makes a copy of the array to perserve original array data
   }
 
   function filterList(name) {
