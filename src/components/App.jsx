@@ -7,15 +7,16 @@ import Filter from "./Filter";
 
 function App() {
   const [noteArray, setNoteArray] = useState([]);
+  const [copyArr, setCopyArr] = useState([]);
 
   function pushtoArray(note) {
     setNoteArray((prevNote) => {
       return [...prevNote, note];
     });
   }
+
   function updateNote(id) {
     const newArr = noteArray.map((item, index) => {
-      //return index === id ? { ...item, isComplete: true } : item;
       if (index === id && item.isComplete === false) {
         return { ...item, isComplete: true };
       } else if (index === id && item.isComplete === true) {
@@ -25,16 +26,23 @@ function App() {
       }
     });
     setNoteArray(newArr);
-  }
-
-  function clearCompleted() {
-    setNoteArray([]);
+    setCopyArr(newArr); //makes a copy of the array
   }
 
   function filterList(name) {
-    let result = noteArray.filter((item) => item.isComplete === true);
-    setNoteArray(result);
-    console.log(noteArray);
+    switch (name) {
+      case "completed":
+        return setNoteArray(copyArr.filter((item) => item.isComplete === true));
+      case "active":
+        return setNoteArray(
+          copyArr.filter((item) => item.isComplete === false)
+        );
+      case "all":
+        return setNoteArray(copyArr);
+      default:
+        setNoteArray([]);
+        setCopyArr([]);
+    }
   }
 
   return (
@@ -52,14 +60,9 @@ function App() {
           />
         );
       })}
-      <Filter filter={filterList} clearList={clearCompleted} />
+      <Filter filter={filterList} />
     </div>
   );
 }
 
 export default App;
-
-// new idea
-// call updateNote onclick from note.jsx X
-// update the bool value to true in app.jsx by passing the name? to identify the object and copy over previous note with only the updated bool.
-// render the strike thru in app.jsx based on boolean val
