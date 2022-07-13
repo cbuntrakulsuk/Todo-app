@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto:wght@100&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Josefin Sans';
+  font-family: "Josefin Sans";
 }
 
 .app {
@@ -13,7 +13,7 @@
 
 .note {
   position: relative;
-  background-color: #25273C;
+  background-color: #25273c;
   text-align: left;
   padding: 1rem;
   margin: 0 auto;
@@ -24,6 +24,7 @@
   color: rgb(151, 149, 149);
   border-bottom: 1px solid rgb(70, 69, 69);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
 }
 
 .filter-bar {
@@ -100,7 +101,7 @@ input {
   width: 545px;
   border-radius: 0.3rem;
   padding-left: 20px;
-  background-color: #1E1F30;
+  background-color: #1e1f30;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: transparent;
   color: #f1f3dd;
@@ -114,7 +115,7 @@ input:focus {
 .filter-bar {
   display: flex;
   position: relative;
-  background-color: #25273C;
+  background-color: #25273c;
   text-align: left;
   padding: 1rem;
   margin: 0 auto;

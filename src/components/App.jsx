@@ -8,6 +8,7 @@ import Filter from "./Filter";
 function App() {
   const [noteArray, setNoteArray] = useState([]);
   const [copyArr, setCopyArr] = useState([]);
+  let count = copyArr.filter((item) => item.isComplete === false).length;
 
   function pushtoArray(note) {
     setNoteArray((prevNote) => {
@@ -53,18 +54,22 @@ function App() {
     <div className="app">
       <Header />
       <Search pushNote={pushtoArray} />
+
       {noteArray.map((item, index) => {
         return (
-          <Note
-            content={item.content}
-            id={index}
-            key={index}
-            update={updateNote}
-            bool={item.isComplete}
-          />
+          <div id="items">
+            <Note
+              content={item.content}
+              id={index}
+              key={index}
+              update={updateNote}
+              bool={item.isComplete}
+            />
+          </div>
         );
       })}
-      <Filter filter={filterList} />
+
+      <Filter filter={filterList} itemsLeft={count} />
     </div>
   );
 }

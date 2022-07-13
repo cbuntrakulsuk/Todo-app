@@ -6,7 +6,7 @@ function Filter(props) {
 
   return (
     <div className="filter-bar">
-      <div>5 Items left</div>
+      <div>{props.itemsLeft} Items left</div>
       <button className="filter-btn" name="all" onClick={filter}>
         All
       </button>
