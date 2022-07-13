@@ -4,6 +4,7 @@ import Header from "./Header";
 import Note from "./Note";
 import Search from "./Search";
 import Filter from "./Filter";
+import { ReactSortable } from "react-sortablejs";
 
 function App() {
   const [noteArray, setNoteArray] = useState([]);
@@ -54,21 +55,27 @@ function App() {
     <div className="app">
       <Header />
       <Search pushNote={pushtoArray} />
-
-      {noteArray.map((item, index) => {
-        return (
-          <div id="items">
-            <Note
-              content={item.content}
-              id={index}
-              key={index}
-              update={updateNote}
-              bool={item.isComplete}
-            />
-          </div>
-        );
-      })}
-
+      <ReactSortable
+        tag="div"
+        list={noteArray}
+        setList={setNoteArray}
+        animation={500}
+        //ghostClass="sortable-ghost"
+      >
+        {noteArray.map((item, index) => {
+          return (
+            <div>
+              <Note
+                content={item.content}
+                id={index}
+                key={index}
+                update={updateNote}
+                bool={item.isComplete}
+              />
+            </div>
+          );
+        })}
+      </ReactSortable>
       <Filter filter={filterList} itemsLeft={count} />
     </div>
   );
