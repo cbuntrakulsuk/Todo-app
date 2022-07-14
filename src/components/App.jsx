@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import Note from "./Note";
 import Search from "./Search";
@@ -7,8 +7,17 @@ import Filter from "./Filter";
 import { ReactSortable } from "react-sortablejs";
 
 function App() {
-  const [noteArray, setNoteArray] = useState([]);
-  const [copyArr, setCopyArr] = useState([]);
+  const [noteArray, setNoteArray] = useState(
+    () => JSON.parse(localStorage.getItem("todos")) || []
+  );
+  const [copyArr, setCopyArr] = useState(
+    () => JSON.parse(localStorage.getItem("todos")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(copyArr));
+  }, [copyArr]);
+
   let count = copyArr.filter((item) => item.isComplete === false).length;
 
   function pushtoArray(note) {
@@ -55,12 +64,12 @@ function App() {
     <div className="app">
       <Header />
       <Search pushNote={pushtoArray} />
+
       <ReactSortable
         tag="div"
         list={noteArray}
         setList={setNoteArray}
         animation={500}
-        //ghostClass="sortable-ghost"
       >
         {noteArray.map((item, index) => {
           return (
@@ -76,6 +85,7 @@ function App() {
           );
         })}
       </ReactSortable>
+
       <Filter filter={filterList} itemsLeft={count} />
     </div>
   );
