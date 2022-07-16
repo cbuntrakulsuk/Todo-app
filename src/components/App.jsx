@@ -41,7 +41,7 @@ function App() {
       }
     });
     setNoteArray(newArr);
-    setCopyArr(newArr); //makes a copy of the array to perserve original array data
+    setCopyArr(newArr);
   }
 
   function filterList(name) {

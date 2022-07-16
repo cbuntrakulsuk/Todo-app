@@ -27,6 +27,41 @@
   cursor: pointer;
 }
 
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.check {
+  display: none;
+}
+
+.circle {
+  transform: scale(0.6);
+  margin: 0;
+  text-align: left;
+  height: 40px;
+  width: 40px;
+  border: solid grey 3px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.circle:onclick {
+  background-image: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+.check {
+  transform: scale(1.5);
+}
+
 .filter-bar {
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
