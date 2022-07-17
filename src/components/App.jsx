@@ -73,15 +73,13 @@ function App() {
       >
         {noteArray.map((item, index) => {
           return (
-            <div>
-              <Note
-                content={item.content}
-                id={index}
-                key={index}
-                update={updateNote}
-                bool={item.isComplete}
-              />
-            </div>
+            <Note
+              content={item.content}
+              id={index}
+              key={index}
+              update={updateNote}
+              bool={item.isComplete}
+            />
           );
         })}
       </ReactSortable>

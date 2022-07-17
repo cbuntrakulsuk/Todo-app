@@ -15,27 +15,17 @@ function Filter(props) {
     if (event.target.name === "all") {
       setSelectedButton({
         isAllClicked: true,
-        isActiveClicked: false,
-        isCompletedClicked: false,
       });
     } else if (event.target.name === "active") {
       setSelectedButton({
-        isAllClicked: false,
         isActiveClicked: true,
-        isCompletedClicked: false,
       });
     } else if (event.target.name === "completed") {
       setSelectedButton({
-        isAllClicked: false,
-        isActiveClicked: false,
         isCompletedClicked: true,
       });
     } else {
-      setSelectedButton({
-        isAllClicked: false,
-        isActiveClicked: false,
-        isCompletedClicked: false,
-      });
+      setSelectedButton({});
     }
 
     let name = event.target.getAttribute("name");
