@@ -50,14 +50,6 @@
   margin-right: 1.5rem;
 }
 
-.circle:onclick {
-  background-image: linear-gradient(
-    to right,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
-}
-
 .check {
   transform: scale(1.5);
 }
