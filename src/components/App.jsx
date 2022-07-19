@@ -10,22 +10,23 @@ function App() {
   const [noteArray, setNoteArray] = useState(
     () => JSON.parse(localStorage.getItem("todos")) || []
   );
-  const [copyArr, setCopyArr] = useState(
-    () => JSON.parse(localStorage.getItem("todos")) || []
-  );
+
+  const FILTER_MAP = {
+    All: () => true,
+    Active: (item) => !item.isComplete,
+    Completed: (item) => item.isComplete,
+  };
+
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(copyArr));
-  }, [copyArr]);
+    localStorage.setItem("todos", JSON.stringify(noteArray));
+  }, [noteArray]);
 
-  let count = copyArr.filter((item) => item.isComplete === false).length;
+  let count = noteArray.filter((item) => item.isComplete === false).length;
 
   function pushtoArray(note) {
     setNoteArray((prevNote) => {
-      return [...prevNote, note];
-    });
-
-    setCopyArr((prevNote) => {
       return [...prevNote, note];
     });
   }
@@ -41,24 +42,18 @@ function App() {
       }
     });
     setNoteArray(newArr);
-    setCopyArr(newArr);
   }
 
   function filterList(name) {
     switch (name) {
       case "completed":
-        return setNoteArray(copyArr.filter((item) => item.isComplete === true));
+        return setFilter("Completed");
       case "active":
-        console.log(noteArray);
-        console.log(copyArr);
-        return setNoteArray(
-          copyArr.filter((item) => item.isComplete === false)
-        );
+        return setFilter("Active");
       case "all":
-        return setNoteArray(copyArr);
+        return setFilter("All");
       default:
         setNoteArray([]);
-        setCopyArr([]);
     }
   }
 
@@ -73,7 +68,7 @@ function App() {
         setList={setNoteArray}
         animation={500}
       >
-        {noteArray.map((item, index) => {
+        {noteArray.filter(FILTER_MAP[filter]).map((item, index) => {
           return (
             <Note
               content={item.content}
