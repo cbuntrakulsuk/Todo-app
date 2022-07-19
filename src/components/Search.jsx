@@ -31,7 +31,7 @@ function Search(props) {
           <input
             name="content"
             onChange={handleChange}
-            className="ser"
+            className="search-box"
             type="text"
             placeholder="Enter Note"
             value={inputText.content}

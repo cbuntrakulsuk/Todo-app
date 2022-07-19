@@ -49,6 +49,8 @@ function App() {
       case "completed":
         return setNoteArray(copyArr.filter((item) => item.isComplete === true));
       case "active":
+        console.log(noteArray);
+        console.log(copyArr);
         return setNoteArray(
           copyArr.filter((item) => item.isComplete === false)
         );
