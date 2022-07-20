@@ -34,7 +34,7 @@ function Filter(props) {
 
   return (
     <div>
-      <div className="filter-bar">
+      <div className={props.toggle ? "filter-bar-light" : "filter-bar-dark"}>
         <div>{props.itemsLeft} Items left</div>
         <button
           className="filter-btn"

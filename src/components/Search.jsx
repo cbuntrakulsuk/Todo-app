@@ -31,7 +31,7 @@ function Search(props) {
           <input
             name="content"
             onChange={handleChange}
-            className="search-box"
+            className={props.toggle ? "search-box-light" : "search-box-dark"}
             type="text"
             placeholder="Create a new todo..."
             value={inputText.content}

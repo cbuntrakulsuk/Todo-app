@@ -13,6 +13,8 @@ function App() {
     () => JSON.parse(localStorage.getItem("todos")) || []
   );
 
+  const [isLightActive, setLight] = useState(false);
+
   const FILTER_MAP = {
     All: () => true,
     Active: (item) => !item.isComplete,
@@ -64,10 +66,14 @@ function App() {
     }
   }
 
+  function applyTheme() {
+    setLight((current) => !current);
+  }
+
   return (
-    <div className="app">
-      <Header />
-      <Search pushNote={pushtoArray} />
+    <div className={isLightActive ? "app-light" : "app-dark"}>
+      <Header toggle={isLightActive} theme={applyTheme} />
+      <Search pushNote={pushtoArray} toggle={isLightActive} />
 
       <ReactSortable
         tag="div"
@@ -83,12 +89,13 @@ function App() {
               key={index}
               update={updateNote}
               bool={item.isComplete}
+              toggle={isLightActive}
             />
           );
         })}
       </ReactSortable>
 
-      <Filter filter={filterList} itemsLeft={count} />
+      <Filter toggle={isLightActive} filter={filterList} itemsLeft={count} />
       <Footer />
     </div>
   );

@@ -23,9 +23,8 @@ function Note(props) {
 
   return (
     <div
-      className="note"
+      className={props.toggle ? "note-light" : "note-dark "}
       style={props.bool ? { ...strikeThough } : null}
-      // onClick={handleClick}
     >
       <div className="flex-container">
         <div

@@ -7,11 +7,20 @@
   font-family: "Josefin Sans";
 }
 
-.app {
+.app-dark {
   text-align: center;
+  /* background-color: white; */
+  background-color: #181824;
+  height: 100vh;
 }
 
-.note {
+.app-light {
+  text-align: center;
+  background-color: white;
+  height: 100vh;
+}
+
+.note-dark {
   position: relative;
   background-color: #25273c;
   text-align: left;
@@ -23,6 +32,30 @@
   width: 545px;
   color: rgb(151, 149, 149);
   border-bottom: 1px solid rgb(70, 69, 69);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+
+.note-dark:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.note-light:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.note-light {
+  position: relative;
+  background-color: white;
+  text-align: left;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 545px;
+  color: rgb(151, 149, 149);
+  border-bottom: 1px solid rgb(230, 227, 227);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
@@ -93,6 +126,15 @@ header {
   padding: 2rem;
 }
 
+.header-light {
+  background-image: url("../images/bg-desktop-light.jpg");
+  background-size: cover;
+  height: 30%;
+  width: 100%;
+  position: absolute;
+  padding: 2rem;
+}
+
 .title-bar {
   display: flex;
   width: 530px;
@@ -108,6 +150,7 @@ header {
   width: 50%;
   color: white;
   text-align: right;
+  cursor: pointer;
 }
 
 h1 {
@@ -128,10 +171,19 @@ h1 {
   position: relative;
 }
 
-.search-box {
+.search-box-dark {
   width: 445px;
+  height: 55px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+
+.search-box-light {
+  width: 445px;
+  height: 55px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: white;
 }
 
 .search-btn {
@@ -163,7 +215,7 @@ input:focus {
   color: white;
 }
 
-.filter-bar {
+.filter-bar-dark {
   display: flex;
   position: relative;
   background-color: #25273c;
@@ -175,7 +227,32 @@ input:focus {
   margin-top: 0px;
   width: 545px;
   color: rgb(151, 149, 149);
-  border-bottom: 1px solid rgb(70, 69, 69);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: 13px;
+}
+
+.filter-bar-dark {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.filter-bar-light {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.filter-bar-light {
+  display: flex;
+  position: relative;
+  background-color: white;
+  text-align: left;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 545px;
+  color: rgb(151, 149, 149);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
   align-items: center;
