@@ -1,4 +1,4 @@
-import ListIcon from "@mui/icons-material/List";
+import { ReactComponent as Sun } from "../images/icon-sun.svg";
 
 function Header() {
   return (
@@ -9,7 +9,7 @@ function Header() {
             <h1>TODO</h1>
           </div>
           <div className="icon">
-            <ListIcon fontSize="large" />
+            <Sun fontSize="large" />
           </div>
         </div>
       </header>

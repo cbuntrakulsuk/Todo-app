@@ -33,7 +33,7 @@ function Search(props) {
             onChange={handleChange}
             className="search-box"
             type="text"
-            placeholder="Enter Note"
+            placeholder="Create a new todo..."
             value={inputText.content}
           ></input>
           <button onClick={submitNote} className="search-btn">

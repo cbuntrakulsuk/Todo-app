@@ -4,6 +4,8 @@ import Header from "./Header";
 import Note from "./Note";
 import Search from "./Search";
 import Filter from "./Filter";
+import Footer from "./Footer";
+
 import { ReactSortable } from "react-sortablejs";
 
 function App() {
@@ -31,17 +33,22 @@ function App() {
     });
   }
 
-  function updateNote(id) {
-    const newArr = noteArray.map((item, index) => {
-      if (index === id && item.isComplete === false) {
-        return { ...item, isComplete: true };
-      } else if (index === id && item.isComplete === true) {
-        return { ...item, isComplete: false };
-      } else {
-        return item;
-      }
-    });
-    setNoteArray(newArr);
+  function updateNote(id, name) {
+    if (name === "delete") {
+      const newArr = noteArray.filter((item, index) => index !== id);
+      setNoteArray(newArr);
+    } else {
+      const newArr = noteArray.map((item, index) => {
+        if (index === id && item.isComplete === false) {
+          return { ...item, isComplete: true };
+        } else if (index === id && item.isComplete === true) {
+          return { ...item, isComplete: false };
+        } else {
+          return item;
+        }
+      });
+      setNoteArray(newArr);
+    }
   }
 
   function filterList(name) {
@@ -82,6 +89,7 @@ function App() {
       </ReactSortable>
 
       <Filter filter={filterList} itemsLeft={count} />
+      <Footer />
     </div>
   );
 }

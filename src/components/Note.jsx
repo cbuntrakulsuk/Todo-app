@@ -1,4 +1,5 @@
 import { ReactComponent as Checkmark } from "../images/icon-check.svg";
+import { ReactComponent as Cross } from "../images/icon-cross.svg";
 
 function Note(props) {
   const strikeThough = {
@@ -15,24 +16,33 @@ function Note(props) {
     display: "block",
   };
 
-  function handleClick() {
-    props.update(props.id);
+  function handleClick(event) {
+    let name = event.target.getAttribute("name");
+    props.update(props.id, name);
   }
 
   return (
     <div
       className="note"
       style={props.bool ? { ...strikeThough } : null}
-      onClick={handleClick}
+      // onClick={handleClick}
     >
       <div className="flex-container">
-        <div className="circle" style={props.bool ? { ...background } : null}>
+        <div
+          onClick={handleClick}
+          name="checkMark"
+          className="circle"
+          style={props.bool ? { ...background } : null}
+        >
           <Checkmark
             className="check"
             style={props.bool ? { ...check } : null}
           />
         </div>
         <div className="content">{props.content}</div>
+        <span className="deleteButton" name="delete" onClick={handleClick}>
+          <Cross className="cross" />
+        </span>
       </div>
     </div>
   );

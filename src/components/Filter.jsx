@@ -33,35 +33,40 @@ function Filter(props) {
   }
 
   return (
-    <div className="filter-bar">
-      <div>{props.itemsLeft} Items left</div>
-      <button
-        className="filter-btn"
-        style={selectedButton.isAllClicked === true ? activeColor : null}
-        name="all"
-        onClick={filter}
-      >
-        All
-      </button>
-      <button
-        className="filter-btn"
-        style={selectedButton.isActiveClicked === true ? activeColor : null}
-        name="active"
-        onClick={filter}
-      >
-        Active
-      </button>
-      <button
-        className="filter-btn"
-        style={selectedButton.isCompletedClicked === true ? activeColor : null}
-        name="completed"
-        onClick={filter}
-      >
-        Completed
-      </button>
-      <button className="filter-btn" name="clearCompleted" onClick={filter}>
-        Clear Completed
-      </button>
+    <div>
+      <div className="filter-bar">
+        <div>{props.itemsLeft} Items left</div>
+        <button
+          className="filter-btn"
+          style={selectedButton.isAllClicked === true ? activeColor : null}
+          name="all"
+          onClick={filter}
+        >
+          All
+        </button>
+        <button
+          className="filter-btn"
+          style={selectedButton.isActiveClicked === true ? activeColor : null}
+          name="active"
+          onClick={filter}
+        >
+          Active
+        </button>
+        <button
+          className="filter-btn"
+          style={
+            selectedButton.isCompletedClicked === true ? activeColor : null
+          }
+          name="completed"
+          onClick={filter}
+        >
+          Completed
+        </button>
+        <button className="filter-btn" name="clearCompleted" onClick={filter}>
+          Clear Completed
+        </button>
+      </div>
+      <p className="reorder"> Drag and drop to reorder list </p>
     </div>
   );
 }
