@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/images/design/Todo-app.png)
+![](./src/images/design/Todo-app-screen.png)
 
 ### Links
 
