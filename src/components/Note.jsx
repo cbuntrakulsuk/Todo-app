@@ -18,7 +18,7 @@ function Note(props) {
 
   function handleClick(event) {
     let name = event.target.getAttribute("name");
-    props.update(props.id, name);
+    props.update(props.uuid, name);
   }
 
   return (

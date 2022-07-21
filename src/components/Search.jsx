@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function Search(props) {
   const [inputText, setInputText] = useState({
     content: "",
     isComplete: false,
+    uid: "",
   });
 
   function handleChange(event) {
@@ -11,6 +13,7 @@ function Search(props) {
     setInputText({
       [name]: value,
       isComplete: false,
+      uuid: uuidv4(),
     });
   }
 
@@ -21,6 +24,7 @@ function Search(props) {
     setInputText({
       content: "",
       isComplete: false,
+      uuid: "",
     });
   }
 
@@ -37,9 +41,6 @@ function Search(props) {
             placeholder="Create a new todo..."
             value={inputText.content}
           ></input>
-          {/* <button onClick={submitNote} className="search-btn">
-            Submit
-          </button> */}
         </div>
       </form>
     </div>

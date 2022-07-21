@@ -5,7 +5,6 @@ import Note from "./Note";
 import Search from "./Search";
 import Filter from "./Filter";
 import Footer from "./Footer";
-
 import { ReactSortable } from "react-sortablejs";
 
 function App() {
@@ -30,20 +29,22 @@ function App() {
   let count = noteArray.filter((item) => item.isComplete === false).length;
 
   function pushtoArray(note) {
+    console.log(note);
     setNoteArray((prevNote) => {
       return [...prevNote, note];
     });
   }
 
   function updateNote(id, name) {
+    console.log(noteArray);
     if (name === "delete") {
-      const newArr = noteArray.filter((item, index) => index !== id);
+      const newArr = noteArray.filter((item) => item.uuid !== id);
       setNoteArray(newArr);
     } else {
-      const newArr = noteArray.map((item, index) => {
-        if (index === id && item.isComplete === false) {
+      const newArr = noteArray.map((item) => {
+        if (item.uuid === id && item.isComplete === false) {
           return { ...item, isComplete: true };
-        } else if (index === id && item.isComplete === true) {
+        } else if (item.uuid === id && item.isComplete === true) {
           return { ...item, isComplete: false };
         } else {
           return item;
@@ -61,9 +62,17 @@ function App() {
         return setFilter("Active");
       case "all":
         return setFilter("All");
+      case "clearCompleted":
+        clearC();
+        return setFilter("Active");
       default:
         setNoteArray([]);
     }
+  }
+
+  function clearC() {
+    const newArr = noteArray.filter((item) => item.isComplete !== true);
+    setNoteArray(newArr);
   }
 
   function applyTheme() {
@@ -85,11 +94,11 @@ function App() {
           return (
             <Note
               content={item.content}
-              id={index}
               key={index}
               update={updateNote}
               bool={item.isComplete}
               toggle={isLightActive}
+              uuid={item.uuid}
             />
           );
         })}
