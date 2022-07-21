@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Filter(props) {
   const activeColor = {
-    color: "#9f1a46",
+    color: "hsl(220, 98%, 61%)",
   };
 
   const [selectedButton, setSelectedButton] = useState({
@@ -35,7 +35,7 @@ function Filter(props) {
   return (
     <div>
       <div className={props.toggle ? "filter-bar-light" : "filter-bar-dark"}>
-        <div>{props.itemsLeft} Items left</div>
+        <div className="filter-btn">{props.itemsLeft} Items left</div>
         <button
           className="filter-btn"
           style={selectedButton.isAllClicked === true ? activeColor : null}

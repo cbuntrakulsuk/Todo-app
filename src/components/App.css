@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Josefin Sans";
+  font-size: 17px;
 }
 
 .app-dark {
@@ -24,14 +25,26 @@
   position: relative;
   background-color: #25273c;
   text-align: left;
-  padding: 1rem;
   margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  height: 60px;
   width: 545px;
+  padding: 10px 0 0 15px;
   color: rgb(151, 149, 149);
   border-bottom: 1px solid rgb(70, 69, 69);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+
+.note-light {
+  position: relative;
+  background-color: white;
+  text-align: left;
+  padding: 10px 0 0 15px;
+  margin: 0 auto;
+  width: 545px;
+  height: 60px;
+  color: rgb(151, 149, 149);
+  border-bottom: 1px solid rgb(230, 227, 227);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
@@ -42,22 +55,6 @@
 
 .note-light:first-child {
   border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.note-light {
-  position: relative;
-  background-color: white;
-  text-align: left;
-  padding: 1rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  width: 545px;
-  color: rgb(151, 149, 149);
-  border-bottom: 1px solid rgb(230, 227, 227);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  cursor: pointer;
 }
 
 .flex-container {
@@ -157,6 +154,7 @@ h1 {
   color: White;
   letter-spacing: 1rem;
   text-align: left;
+  font-size: 30px;
 }
 
 .search-bar {
@@ -172,21 +170,19 @@ h1 {
 }
 
 .search-box-dark {
-  width: 445px;
+  width: 545px;
   height: 55px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  color: rgb(151, 149, 149);
 }
 
 .search-box-light {
-  width: 445px;
+  width: 545px;
   height: 55px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
   background-color: white;
+  color: rgb(151, 149, 149);
 }
 
-.search-btn {
+/* .search-btn {
   width: 100px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -196,7 +192,7 @@ h1 {
   background-color: #9f1a46;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #f1f3dd;
-}
+} */
 
 input {
   position: relative;
@@ -207,12 +203,11 @@ input {
   background-color: #1e1f30;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: transparent;
-  color: #f1f3dd;
+  /* color: #f1f3dd; */
 }
 
 input:focus {
   outline: none;
-  color: white;
 }
 
 .filter-bar-dark {
@@ -267,6 +262,7 @@ input:focus {
   background-color: transparent;
   border: transparent;
   color: rgb(151, 149, 149);
+  font-size: 14px;
 }
 
 .filter-btn:hover {

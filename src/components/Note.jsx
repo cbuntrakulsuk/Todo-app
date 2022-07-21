@@ -4,7 +4,7 @@ import { ReactComponent as Cross } from "../images/icon-cross.svg";
 function Note(props) {
   const strikeThough = {
     textDecoration: "line-through",
-    textDecorationColor: "#9f1a46",
+    textDecorationColor: "#979595",
     textDecorationThickness: "3px",
   };
 

@@ -26,9 +26,10 @@ function Search(props) {
 
   return (
     <div className="search-bar">
-      <form>
+      <form onSubmit={submitNote}>
         <div className="search-field">
           <input
+            autoFocus
             name="content"
             onChange={handleChange}
             className={props.toggle ? "search-box-light" : "search-box-dark"}
@@ -36,9 +37,9 @@ function Search(props) {
             placeholder="Create a new todo..."
             value={inputText.content}
           ></input>
-          <button onClick={submitNote} className="search-btn">
+          {/* <button onClick={submitNote} className="search-btn">
             Submit
-          </button>
+          </button> */}
         </div>
       </form>
     </div>
